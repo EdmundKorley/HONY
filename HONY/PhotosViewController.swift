@@ -1,5 +1,5 @@
 //
-//  PhotoViewController.swift
+//  PhotosViewController.swift
 //  HONY
 //
 //  Created by Edmund Korley on 2016-10-17.
@@ -8,17 +8,17 @@
 
 import UIKit
 
-class PhotoViewController: UIViewController {
+class PhotosViewController: UIViewController {
 
+    // tableView where each cell will be a UIImage of a HONY post
+    @IBOutlet weak var tableView: UITableView!
     // Here we store the result returned by our request to Tumblr for HONY posts
     public var honyPosts: NSArray?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        /*
-        ** Here, we fire a network request to the Tumblr Posts Endpoint for the HONY blog meta data
-        */
+        // Here, we fire a network request to the Tumblr Posts Endpoint for the HONY blog meta data
         let apiKey = "Q6vHoaVm5L1u2ZAW1fqv3Jw48gFzYVg9P0vH0VHl3GVy6quoGV"
         let url = URL(string:"https://api.tumblr.com/v2/blog/humansofnewyork.tumblr.com/posts/photo?api_key=\(apiKey)")
         let request = URLRequest(url: url!)

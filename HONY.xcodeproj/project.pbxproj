@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		1D6CA2746A1599BC58C44712 /* Pods_HONY.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E64678B0BD4F971F1883B67 /* Pods_HONY.framework */; };
 		FB33374A1DB57DB70030645F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3337491DB57DB70030645F /* AppDelegate.swift */; };
-		FB33374C1DB57DB70030645F /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB33374B1DB57DB70030645F /* PhotoViewController.swift */; };
+		FB33374C1DB57DB70030645F /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB33374B1DB57DB70030645F /* PhotosViewController.swift */; };
 		FB33374F1DB57DB70030645F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB33374D1DB57DB70030645F /* Main.storyboard */; };
 		FB3337511DB57DB70030645F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB3337501DB57DB70030645F /* Assets.xcassets */; };
 		FB3337541DB57DB70030645F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB3337521DB57DB70030645F /* LaunchScreen.storyboard */; };
@@ -21,7 +21,7 @@
 		C5FB56FFF03FEA2CDEDF57E7 /* Pods-HONY.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HONY.release.xcconfig"; path = "Pods/Target Support Files/Pods-HONY/Pods-HONY.release.xcconfig"; sourceTree = "<group>"; };
 		FB3337461DB57DB70030645F /* HONY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HONY.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB3337491DB57DB70030645F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FB33374B1DB57DB70030645F /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		FB33374B1DB57DB70030645F /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		FB33374E1DB57DB70030645F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FB3337501DB57DB70030645F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB3337531DB57DB70030645F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -79,7 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				FB3337491DB57DB70030645F /* AppDelegate.swift */,
-				FB33374B1DB57DB70030645F /* PhotoViewController.swift */,
+				FB33374B1DB57DB70030645F /* PhotosViewController.swift */,
 				FB33374D1DB57DB70030645F /* Main.storyboard */,
 				FB3337501DB57DB70030645F /* Assets.xcassets */,
 				FB3337521DB57DB70030645F /* LaunchScreen.storyboard */,
@@ -211,7 +211,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB33374C1DB57DB70030645F /* PhotoViewController.swift in Sources */,
+				FB33374C1DB57DB70030645F /* PhotosViewController.swift in Sources */,
 				FB33374A1DB57DB70030645F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

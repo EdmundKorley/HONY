@@ -10,6 +10,8 @@ import UIKit
 
 class PhotosTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var honyImage: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

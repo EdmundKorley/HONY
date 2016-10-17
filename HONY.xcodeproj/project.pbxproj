@@ -13,6 +13,7 @@
 		FB33374F1DB57DB70030645F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB33374D1DB57DB70030645F /* Main.storyboard */; };
 		FB3337511DB57DB70030645F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB3337501DB57DB70030645F /* Assets.xcassets */; };
 		FB3337541DB57DB70030645F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB3337521DB57DB70030645F /* LaunchScreen.storyboard */; };
+		FBAB3B241DB591C60014C818 /* PhotosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAB3B231DB591C60014C818 /* PhotosTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		FB3337501DB57DB70030645F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB3337531DB57DB70030645F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FB3337551DB57DB70030645F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBAB3B231DB591C60014C818 /* PhotosTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 		FB3337481DB57DB70030645F /* HONY */ = {
 			isa = PBXGroup;
 			children = (
+				FBAB3B231DB591C60014C818 /* PhotosTableViewCell.swift */,
 				FB3337491DB57DB70030645F /* AppDelegate.swift */,
 				FB33374B1DB57DB70030645F /* PhotosViewController.swift */,
 				FB33374D1DB57DB70030645F /* Main.storyboard */,
@@ -211,6 +214,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBAB3B241DB591C60014C818 /* PhotosTableViewCell.swift in Sources */,
 				FB33374C1DB57DB70030645F /* PhotosViewController.swift in Sources */,
 				FB33374A1DB57DB70030645F /* AppDelegate.swift in Sources */,
 			);

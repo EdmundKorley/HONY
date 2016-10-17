@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AFNetworking
 
 class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -14,7 +15,7 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var tableView: UITableView!
     // Here we store the result returned by our request to Tumblr for HONY posts
     public var honyPosts: NSArray?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.dataSource = self
@@ -34,6 +35,7 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 if let responseDictionary = try! JSONSerialization.jsonObject(with: data, options:[]) as? NSDictionary {
                     let subResponseDictionary = responseDictionary["response"] as! NSDictionary
                     self.honyPosts = subResponseDictionary["posts"] as? NSArray
+                    self.tableView.reloadData()
                     print("[DEBUG HONY response as NSArray]: \(self.honyPosts)")
                 }
             }
@@ -61,11 +63,16 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let cell = tableView.dequeueReusableCell(withIdentifier: "com.Melanchroes.PhotosPrototypeCell", for: indexPath) as! PhotosTableViewCell
         let urlString = self.getImageURL(with: indexPath.row)
         let url = URL(string: urlString!)
+        cell.honyImage.setImageWith(url!)
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (self.honyPosts?.count)!
+        if let posts = self.honyPosts {
+            return posts.count
+        } else {
+            return 0
+        }
     }
 
 

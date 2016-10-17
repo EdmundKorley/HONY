@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D6CA2746A1599BC58C44712 /* Pods_HONY.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E64678B0BD4F971F1883B67 /* Pods_HONY.framework */; };
 		FB33374A1DB57DB70030645F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3337491DB57DB70030645F /* AppDelegate.swift */; };
 		FB33374C1DB57DB70030645F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB33374B1DB57DB70030645F /* ViewController.swift */; };
 		FB33374F1DB57DB70030645F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB33374D1DB57DB70030645F /* Main.storyboard */; };
@@ -15,6 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4E64678B0BD4F971F1883B67 /* Pods_HONY.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HONY.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B64E2097B87E391D7A2E0152 /* Pods-HONY.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HONY.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HONY/Pods-HONY.debug.xcconfig"; sourceTree = "<group>"; };
+		C5FB56FFF03FEA2CDEDF57E7 /* Pods-HONY.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HONY.release.xcconfig"; path = "Pods/Target Support Files/Pods-HONY/Pods-HONY.release.xcconfig"; sourceTree = "<group>"; };
 		FB3337461DB57DB70030645F /* HONY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HONY.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB3337491DB57DB70030645F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB33374B1DB57DB70030645F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D6CA2746A1599BC58C44712 /* Pods_HONY.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		096B8D7D4039749E8217AED8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B64E2097B87E391D7A2E0152 /* Pods-HONY.debug.xcconfig */,
+				C5FB56FFF03FEA2CDEDF57E7 /* Pods-HONY.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8DC69BC8A37C914BACA97619 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4E64678B0BD4F971F1883B67 /* Pods_HONY.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FB33373D1DB57DB70030645F = {
 			isa = PBXGroup;
 			children = (
 				FB3337481DB57DB70030645F /* HONY */,
 				FB3337471DB57DB70030645F /* Products */,
+				096B8D7D4039749E8217AED8 /* Pods */,
+				8DC69BC8A37C914BACA97619 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FB3337581DB57DB70030645F /* Build configuration list for PBXNativeTarget "HONY" */;
 			buildPhases = (
+				17CF827A1C94DF784E553998 /* [CP] Check Pods Manifest.lock */,
 				FB3337421DB57DB70030645F /* Sources */,
 				FB3337431DB57DB70030645F /* Frameworks */,
 				FB3337441DB57DB70030645F /* Resources */,
+				D123DFFAC3D1E40F3E6CA03A /* [CP] Embed Pods Frameworks */,
+				3A46029E6F9557C8F8CE5E6C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,6 +157,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		17CF827A1C94DF784E553998 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3A46029E6F9557C8F8CE5E6C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HONY/Pods-HONY-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D123DFFAC3D1E40F3E6CA03A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HONY/Pods-HONY-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FB3337421DB57DB70030645F /* Sources */ = {
@@ -258,6 +333,7 @@
 		};
 		FB3337591DB57DB70030645F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B64E2097B87E391D7A2E0152 /* Pods-HONY.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HONY/Info.plist;
@@ -270,6 +346,7 @@
 		};
 		FB33375A1DB57DB70030645F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C5FB56FFF03FEA2CDEDF57E7 /* Pods-HONY.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HONY/Info.plist;
@@ -299,6 +376,7 @@
 				FB33375A1DB57DB70030645F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

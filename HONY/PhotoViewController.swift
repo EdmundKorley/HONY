@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  PhotoViewController.swift
 //  HONY
 //
 //  Created by Edmund Korley on 2016-10-17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class PhotoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

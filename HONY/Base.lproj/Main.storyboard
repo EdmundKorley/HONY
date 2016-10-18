@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -31,15 +32,25 @@
                                                 <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cd9-1z-hh2">
                                                     <frame key="frameInset" width="375" height="320"/>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HONY" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iaf-eZ-ohM">
+                                                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="50"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="shadowColor" red="0.80000001190000003" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <size key="shadowOffset" width="2" height="2"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="Iaf-eZ-ohM" firstAttribute="leading" secondItem="6lh-CX-Mxx" secondAttribute="leadingMargin" constant="5" id="0yg-M4-wCg"/>
                                                 <constraint firstAttribute="trailing" secondItem="cd9-1z-hh2" secondAttribute="trailing" id="6xu-g2-Kdp"/>
                                                 <constraint firstItem="cd9-1z-hh2" firstAttribute="leading" secondItem="6lh-CX-Mxx" secondAttribute="leading" id="Vps-9c-Gah"/>
+                                                <constraint firstItem="Iaf-eZ-ohM" firstAttribute="bottom" secondItem="6lh-CX-Mxx" secondAttribute="bottomMargin" constant="5" id="hex-g0-HUl"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="honyImage" destination="cd9-1z-hh2" id="aGM-3T-rR0"/>
+                                            <outlet property="honyLabel" destination="Iaf-eZ-ohM" id="jAS-dr-E3C"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

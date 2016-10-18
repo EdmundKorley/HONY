@@ -65,6 +65,8 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let urlString = self.getImageURL(with: indexPath.row)
         let url = URL(string: urlString!)
         cell.honyImage.setImageWith(url!)
+        cell.honyLabel.text = "#\((self.honyPosts?.count)! - (indexPath.row + 1))"
+        cell.honyLabel.numberOfLines = 0
         return cell
     }
     

@@ -20,6 +20,7 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        self.tableView.rowHeight = 280
         
         // Here, we fire a network request to the Tumblr Posts Endpoint for the HONY blog meta data
         let apiKey = "Q6vHoaVm5L1u2ZAW1fqv3Jw48gFzYVg9P0vH0VHl3GVy6quoGV"

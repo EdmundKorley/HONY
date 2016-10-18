@@ -24,18 +24,17 @@
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="com.Melanchroes.PhotosPrototypeCell" rowHeight="320" id="jM5-6b-iK5" customClass="PhotosTableViewCell" customModule="HONY">
                                         <rect key="frame" x="0.0" y="28" width="375" height="320"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jM5-6b-iK5" id="6lh-CX-Mxx">
-                                            <frame key="frameInset" width="375" height="320"/>
-                                            <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" autoresizesSubviews="NO" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jM5-6b-iK5" id="6lh-CX-Mxx">
+                                            <frame key="frameInset" minY="0.0%" width="375" height="319"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinY="YES" flexibleMaxY="YES"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cd9-1z-hh2"/>
+                                                <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cd9-1z-hh2">
+                                                    <frame key="frameInset" width="375" height="320"/>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="cd9-1z-hh2" firstAttribute="leading" secondItem="6lh-CX-Mxx" secondAttribute="leading" id="Kcg-1n-IQ2"/>
-                                                <constraint firstAttribute="bottom" secondItem="cd9-1z-hh2" secondAttribute="bottom" id="ZDJ-XW-Phf"/>
-                                                <constraint firstAttribute="bottom" secondItem="cd9-1z-hh2" secondAttribute="bottom" id="auv-su-GMz"/>
-                                                <constraint firstItem="cd9-1z-hh2" firstAttribute="top" secondItem="6lh-CX-Mxx" secondAttribute="top" id="cdh-Xu-aLm"/>
-                                                <constraint firstAttribute="trailing" secondItem="cd9-1z-hh2" secondAttribute="trailing" id="jYS-nL-6tF"/>
+                                                <constraint firstAttribute="trailing" secondItem="cd9-1z-hh2" secondAttribute="trailing" id="6xu-g2-Kdp"/>
+                                                <constraint firstItem="cd9-1z-hh2" firstAttribute="leading" secondItem="6lh-CX-Mxx" secondAttribute="leading" id="Vps-9c-Gah"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>

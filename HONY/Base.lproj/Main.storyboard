@@ -26,7 +26,7 @@
                                         <rect key="frame" x="0.0" y="92" width="375" height="320"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" autoresizesSubviews="NO" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jM5-6b-iK5" id="6lh-CX-Mxx">
-                                            <frame key="frameInset" minY="0.0%" width="375" height="319"/>
+                                            <frame key="frameInset" minY="0.0%" width="375" height="320"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinY="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cd9-1z-hh2">

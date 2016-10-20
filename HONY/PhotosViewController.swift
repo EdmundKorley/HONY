@@ -25,6 +25,42 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.tableView.rowHeight = 280
         
         // Here, we fire a network request to the Tumblr Posts Endpoint for the HONY blog meta data
+        self.requestHONYPosts()
+        
+        // Initialize a UIRefreshControl
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refreshControlAction(_:)), for: UIControlEvents.valueChanged)
+        // add refresh control to table view
+        tableView.insertSubview(refreshControl, at: 0)
+    }
+
+    func refreshControlAction(_ refreshControl: UIRefreshControl) {
+        // Here, we fire a network request to the Tumblr Posts Endpoint for the HONY blog meta data
+        let apiKey = "Q6vHoaVm5L1u2ZAW1fqv3Jw48gFzYVg9P0vH0VHl3GVy6quoGV"
+        let url = URL(string:"https://api.tumblr.com/v2/blog/humansofnewyork.tumblr.com/posts/photo?api_key=\(apiKey)")
+        let request = URLRequest(url: url!)
+        let session = URLSession(
+            configuration: URLSessionConfiguration.default,
+            delegate:nil,
+            delegateQueue:OperationQueue.main
+        )
+        let task : URLSessionDataTask = session.dataTask(with: request,completionHandler: { (dataOrNil, response, error) in
+            if let data = dataOrNil {
+                if let responseDictionary = try! JSONSerialization.jsonObject(with: data, options:[]) as? NSDictionary {
+                    let subResponseDictionary = responseDictionary["response"] as! NSDictionary
+                    self.honyPosts = subResponseDictionary["posts"] as? NSArray
+                    self.totalPosts = subResponseDictionary["total_posts"] as? Int
+                    self.tableView.reloadData()
+                    // Tell the refreshControl to stop spinning
+                    refreshControl.endRefreshing()
+                }
+            }
+        });
+        task.resume()
+    }
+    
+    private func requestHONYPosts() {
+        // Here, we fire a network request to the Tumblr Posts Endpoint for the HONY blog meta data
         let apiKey = "Q6vHoaVm5L1u2ZAW1fqv3Jw48gFzYVg9P0vH0VHl3GVy6quoGV"
         let url = URL(string:"https://api.tumblr.com/v2/blog/humansofnewyork.tumblr.com/posts/photo?api_key=\(apiKey)")
         let request = URLRequest(url: url!)
@@ -45,7 +81,7 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
         });
         task.resume()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -94,7 +94,12 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let urlString = self.getImageURL(with: (indexPath?.row)!)
         let url = URL(string: urlString!)
         pdvc.detailPhotoURL = url
+        pdvc.photoDetailNumberMedium = self.getPostID(with: (indexPath?.row)!)
     }
 
+    // A routine to remove the gray selection effect.
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated:true)
+    }
 }
 

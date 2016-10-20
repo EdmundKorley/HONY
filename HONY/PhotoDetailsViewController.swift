@@ -13,11 +13,15 @@ class PhotoDetailsViewController: UIViewController {
 
     @IBOutlet weak var detailPhoto: UIImageView!
     public var detailPhotoURL: URL?
+    @IBOutlet weak var photoDetailNumber: UILabel!
+    public var photoDetailNumberMedium: String?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        detailPhoto.setImageWith(detailPhotoURL!)
-        // Do any additional setup after loading the view.
+        self.detailPhoto.setImageWith(detailPhotoURL!)
+        print(photoDetailNumberMedium)
+        self.photoDetailNumber.text!.append(photoDetailNumberMedium!)
     }
 
     override func didReceiveMemoryWarning() {

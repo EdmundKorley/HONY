@@ -102,6 +102,17 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return Optional<String>("\(self.totalPosts! - index)")
     }
     
+    // A custom method to return the text associated with the photo in the post
+    private func getPostText(with index: Int) -> String? {
+        let post = self.honyPosts?[index] as! NSDictionary
+        var caption = post["caption"] as! String
+        caption = caption.replacingOccurrences(of: "<p>", with: "")
+        caption = caption.replacingOccurrences(of: "</p>", with: "")
+        caption = caption.replacingOccurrences(of: "<br>", with: "")
+        caption = caption.replacingOccurrences(of: "</br>", with: "")
+        return caption
+    }
+    
     // The delegation methods we implement as part of the UITableViewDelegate and UItableViewDataSource protocol
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "com.Melanchroes.PhotosPrototypeCell", for: indexPath) as! PhotosTableViewCell
@@ -131,6 +142,7 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let url = URL(string: urlString!)
         pdvc.detailPhotoURL = url
         pdvc.photoDetailNumberMedium = self.getPostID(with: (indexPath?.row)!)
+        pdvc.detailsTextViewMedium = self.getPostText(with: (indexPath?.row)!)
     }
 
     // A routine to remove the gray selection effect.

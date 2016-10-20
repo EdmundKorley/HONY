@@ -12,16 +12,19 @@ import AFNetworking
 class PhotoDetailsViewController: UIViewController {
 
     @IBOutlet weak var detailPhoto: UIImageView!
-    public var detailPhotoURL: URL?
+    var detailPhotoURL: URL?
+    var detailsTextViewMedium: String?
     @IBOutlet weak var photoDetailNumber: UILabel!
-    public var photoDetailNumberMedium: String?
-    
+    var photoDetailNumberMedium: String?
+    @IBOutlet weak var detailsTextView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.detailPhoto.setImageWith(detailPhotoURL!)
         print(photoDetailNumberMedium)
         self.photoDetailNumber.text!.append(photoDetailNumberMedium!)
+        self.detailsTextView.isEditable = false
+        detailsTextView.text = detailsTextViewMedium!
     }
 
     override func didReceiveMemoryWarning() {

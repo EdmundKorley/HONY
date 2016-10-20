@@ -87,6 +87,14 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
 
+    // Here we pass data into the PhotoDetailsViewController in our prepare for segue method
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let pdvc = segue.destination as! PhotoDetailsViewController
+        var indexPath = tableView.indexPath(for: sender as! UITableViewCell)
+        let urlString = self.getImageURL(with: (indexPath?.row)!)
+        let url = URL(string: urlString!)
+        pdvc.detailPhotoURL = url
+    }
 
 }
 

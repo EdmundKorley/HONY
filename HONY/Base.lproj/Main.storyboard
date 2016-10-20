@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="wFk-V4-Odt">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -23,16 +23,16 @@
                                 <color key="backgroundColor" red="0.80000001190000003" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="com.Melanchroes.PhotosPrototypeCell" rowHeight="320" id="jM5-6b-iK5" customClass="PhotosTableViewCell" customModule="HONY">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="320"/>
+                                        <rect key="frame" x="0.0" y="92" width="375" height="320"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" autoresizesSubviews="NO" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jM5-6b-iK5" id="6lh-CX-Mxx">
-                                            <frame key="frameInset" minY="0.0%" width="375" height="319"/>
+                                            <frame key="frameInset" minY="0.0%" width="375" height="320"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinY="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cd9-1z-hh2">
                                                     <frame key="frameInset" width="375" height="320"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HONY" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iaf-eZ-ohM">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iaf-eZ-ohM">
                                                     <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="50"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -51,6 +51,7 @@
                                         <connections>
                                             <outlet property="honyImage" destination="cd9-1z-hh2" id="aGM-3T-rR0"/>
                                             <outlet property="honyLabel" destination="Iaf-eZ-ohM" id="jAS-dr-E3C"/>
+                                            <segue destination="ZWy-sJ-12I" kind="show" id="nFJ-wg-g9h"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -64,11 +65,61 @@
                             <constraint firstAttribute="trailing" secondItem="wjP-Ow-TrC" secondAttribute="trailing" id="Xnh-M0-ffe"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Vxh-fx-BrY"/>
                     <connections>
                         <outlet property="tableView" destination="wjP-Ow-TrC" id="DWe-aq-ldT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="972" y="40.929535232383813"/>
+        </scene>
+        <!--Photo Details View Controller-->
+        <scene sceneID="yYk-To-tRC">
+            <objects>
+                <viewController id="ZWy-sJ-12I" customClass="PhotoDetailsViewController" customModule="HONY" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bKU-qy-1Te"/>
+                        <viewControllerLayoutGuide type="bottom" id="kg0-Y3-FYi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iuy-s6-GV4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SXR-RN-PSh">
+                                <frame key="frameInset" minY="72" width="375" height="340"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="SXR-RN-PSh" firstAttribute="leading" secondItem="iuy-s6-GV4" secondAttribute="leading" id="1V5-cW-eAa"/>
+                            <constraint firstAttribute="trailing" secondItem="SXR-RN-PSh" secondAttribute="trailing" id="Iko-SK-h3L"/>
+                            <constraint firstItem="SXR-RN-PSh" firstAttribute="top" secondItem="bKU-qy-1Te" secondAttribute="bottom" id="Mid-pE-NFP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="detailPhoto" destination="SXR-RN-PSh" id="83g-XA-Raa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EIT-3B-WD3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1849" y="41"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="TWK-7d-JER">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wFk-V4-Odt" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KOq-Jw-u5g">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="vMP-2h-Eth"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OVG-El-aLp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="40.929535232383813"/>
         </scene>

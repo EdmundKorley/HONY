@@ -15,6 +15,8 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var tableView: UITableView!
     // Here we store the result returned by our request to Tumblr for HONY posts
     public var honyPosts: NSArray?
+    // Here we implement a count of the total posts in order to do implement a numbering of posts
+    public var totalPosts: Int?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,8 +38,8 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 if let responseDictionary = try! JSONSerialization.jsonObject(with: data, options:[]) as? NSDictionary {
                     let subResponseDictionary = responseDictionary["response"] as! NSDictionary
                     self.honyPosts = subResponseDictionary["posts"] as? NSArray
+                    self.totalPosts = subResponseDictionary["total_posts"] as? Int
                     self.tableView.reloadData()
-                    print("[DEBUG HONY response as NSArray]: \(self.honyPosts)")
                 }
             }
         });
@@ -59,13 +61,20 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return url
     }
     
+    // A custom method to return a string of the unique HONY post URL
+    private func getPostID(with index: Int) -> String? {
+        return Optional<String>("\(self.totalPosts! - index)")
+    }
+    
     // The delegation methods we implement as part of the UITableViewDelegate and UItableViewDataSource protocol
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "com.Melanchroes.PhotosPrototypeCell", for: indexPath) as! PhotosTableViewCell
         let urlString = self.getImageURL(with: indexPath.row)
         let url = URL(string: urlString!)
         cell.honyImage.setImageWith(url!)
-        cell.honyLabel.text = "#\((self.honyPosts?.count)! - (indexPath.row + 1))"
+        
+        let honyID = self.getPostID(with: indexPath.row)
+        cell.honyLabel.text = "#\(honyID!)"
         cell.honyLabel.numberOfLines = 0
         return cell
     }

@@ -1,5 +1,5 @@
 # HONY
-🗽 iOS client for the Humans of New York blog (via Tumblr API) 
+🗽 iOS client for the Humans of New York photoblog (via Tumblr API) 
 
 ## License
 

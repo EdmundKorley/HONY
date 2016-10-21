@@ -110,6 +110,7 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
         caption = caption.replacingOccurrences(of: "</p>", with: "")
         caption = caption.replacingOccurrences(of: "<br>", with: "")
         caption = caption.replacingOccurrences(of: "</br>", with: "")
+        caption = caption.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         return caption
     }
     

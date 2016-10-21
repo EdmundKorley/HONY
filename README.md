@@ -1,6 +1,8 @@
 # HONY
 🗽 iOS client for the Humans of New York photoblog (via Tumblr API) 
 
+![UX GIF](ux.gif)
+
 ## License
 
 	Copyright 2016 Edmund Korley
